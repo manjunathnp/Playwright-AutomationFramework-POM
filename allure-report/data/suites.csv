@@ -1,2 +1,2 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Fri May 31 17:24:14 IST 2024","Fri May 31 17:24:16 IST 2024","2101","chromium","loginTestFixtures.spec.ts","","","","Login-Logout Test",""
+"passed","Fri May 31 17:52:25 IST 2024","Fri May 31 17:52:27 IST 2024","2276","chromium","loginTestFixtures.spec.ts","","","","Login-Logout Test",""
