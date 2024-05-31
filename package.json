@@ -10,7 +10,6 @@
     "posttest": "npm run generate:reports && npm run open:reports",
     "execute:script": "npx playwright test tests/testCases/loginTestFixtures.spec.ts --project=chromium",
     "test": "npm run execute:script || npm run posttest"
-
   },
   "keywords": [],
   "author": "",
