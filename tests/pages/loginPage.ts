@@ -1,6 +1,6 @@
 import { Locator, Page } from "@playwright/test";
 import BasePage from "../testBase/basePage";
-
+// Login Page
 export class LoginPage extends BasePage{
     readonly page: Page;
     readonly usernameTextField: Locator;
