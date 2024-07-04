@@ -47,30 +47,13 @@ jobs:
         path: test-reports/
         retention-days: 30
 
-    - name: Checkout gh-pages branch
+    - name: Deploy Allure Report to GitHub Pages
       if: always()
-      run: |
-        git config --global user.email "github-actions@github.com"
-        git config --global user.name "GitHub Actions"
-        git clone --depth 1 --single-branch --branch gh-pages https://github.com/${{ github.repository }} gh-pages-dir
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./allure-report
 
-    - name: Copy Allure Report to gh-pages directory
-      if: always()
-      run: |
-        mkdir -p gh-pages-dir/allure-history
-        cp -R allure-report/* gh-pages-dir/allure-history
-
-    - name: Commit and Push Allure Report to gh-pages branch
-      if: always()
-      run: |
-        cd gh-pages-dir
-        git add .
-        git commit -m "Update Allure report"
-        git push origin gh-pages
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 # name: Playwright SauceDemo Automation Tests
 
