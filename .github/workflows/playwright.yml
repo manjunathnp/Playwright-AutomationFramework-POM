@@ -108,8 +108,7 @@ jobs:
 #         PUBLISH_BRANCH: gh-pages
 #         PUBLISH_DIR: allure-history
 
-
-
+#################################################################    
 # name: Playwright SauceDemo Automation Tests
 
 # on:
