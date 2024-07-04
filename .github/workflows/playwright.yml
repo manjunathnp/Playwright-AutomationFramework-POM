@@ -48,12 +48,13 @@ jobs:
         retention-days: 30
 
     - name: Checkout gh-pages branch
-      uses: actions/checkout@v4
       if: always()
-      with:
-        ref: gh-pages
-        path: gh-pages-dir
-        persist-credentials: false
+      run: |
+        git config --global user.email "github-actions@github.com"
+        git config --global user.name "GitHub Actions"
+        git clone --depth 1 --single-branch --branch gh-pages https://github.com/${{ github.repository }} gh-pages-dir
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Copy Allure Report to gh-pages directory
       if: always()
@@ -65,14 +66,11 @@ jobs:
       if: always()
       run: |
         cd gh-pages-dir
-        git config --global user.email "github-actions@github.com"
-        git config --global user.name "GitHub Actions"
         git add .
         git commit -m "Update Allure report"
-        git push
+        git push origin gh-pages
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 
 # name: Playwright SauceDemo Automation Tests
 
