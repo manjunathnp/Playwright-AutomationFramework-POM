@@ -35,6 +35,6 @@ test("Login-Logout Test-2" , async({page})=>{
     expect(loginPage.loginButtonVisibility).toBeTruthy();
 });
 
-test("Test3", async ({ page }) => {
-    console.log("This is Test3");
-})
+// test("Test3", async ({ page }) => {
+//     console.log("This is Test3");
+// });

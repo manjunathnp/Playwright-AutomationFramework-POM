@@ -13,7 +13,6 @@ export default class BasePage{
 
     async enterData(element: Locator, data: string){
         await element.pressSequentially(data);
-
     }
     async clickElement(element: Locator){
         await element.click();
