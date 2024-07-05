@@ -42,7 +42,7 @@ jobs:
 
     - name: Display Allure Report URL
       run: |
-        echo "Allure Report URL: https://manjunathnp.github.io/Playwright-AutomationFramework-POM/allure-report"
+        echo "Allure Report URL: https://manjunathnp.github.io/Playwright-AutomationFramework-POM/allure-report/index.html"
 
 
 
