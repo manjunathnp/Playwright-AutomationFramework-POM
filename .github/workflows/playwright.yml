@@ -41,9 +41,10 @@ jobs:
       if: success()
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GHA_PASSCODE }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./allure-report
         publish_branch: gh-pages
+        cname: allure-report
 
     - name: Display Allure Report URL
       run: |
@@ -108,8 +109,7 @@ jobs:
 #         PUBLISH_BRANCH: gh-pages
 #         PUBLISH_DIR: allure-history
 
-
-
+#################################################################    
 # name: Playwright SauceDemo Automation Tests
 
 # on:
